@@ -20,4 +20,4 @@ pub const CLOCK_FREQ: usize = 12500000;
 /// the physical memory end
 pub const MEMORY_END: usize = 0x88000000;
 /// the max syscall time
-pub const MAX_SYSCALL_NUM: usize = 1024;
+pub const MAX_SYSCALL_NUM: usize = 512;

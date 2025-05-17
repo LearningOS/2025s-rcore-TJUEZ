@@ -143,7 +143,7 @@ impl TaskManager {
         inner.tasks[current].syscall_times[syscall_id] += 1;
     }
     ///get syscall times
-    pub fn get_syscall_times(&self) -> [u32; 1024] {
+    pub fn get_syscall_times(&self) -> [u32; MAX_SYSCALL_NUM] {
         let inner = self.inner.exclusive_access();
         let current = inner.current_task;
         inner.tasks[current].syscall_times
@@ -187,6 +187,6 @@ pub fn add_syscall_times(syscall_id: usize) {
     TASK_MANAGER.add_syscall_times(syscall_id);
 }
 ///get the times of syscall
-pub fn get_syscall_times() -> [u32; 1024] {
+pub fn get_syscall_times() -> [u32; MAX_SYSCALL_NUM] {
     TASK_MANAGER.get_syscall_times()
 }
